@@ -11,6 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { createIssueSchema } from "@/app/validationSchema"
 import ErrorMessage from "@/app/components/ErrorMessage"
+import Spinner from "@/app/components/Spinner"
 
 type IssueForm = z.infer<typeof createIssueSchema>
 
@@ -25,6 +26,20 @@ const NewIssuePage = () => {
     resolver: zodResolver(createIssueSchema),
   })
   const [error, setError] = useState("")
+  const [isSubmitBool, setisSubmitBool] = useState(false)
+
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      setisSubmitBool(true)
+      console.log("NEW issue = ")
+      console.log(data)
+      await axios.post("/api/issues", data)
+      router.push("/issues")
+    } catch (error) {
+      setisSubmitBool(false)
+      setError("An Unexpected Error Occurred")
+    }
+  })
 
   return (
     <div className="max-w-xl">
@@ -33,18 +48,7 @@ const NewIssuePage = () => {
           <Callout.Text>{error}</Callout.Text>
         </Callout.Root>
       )}
-      <form
-        className="space-y-3"
-        onSubmit={handleSubmit(async (data) => {
-          try {
-            console.log("NEW issue = ")
-            console.log(data)
-            await axios.post("/api/issues", data)
-            router.push("/issues")
-          } catch (error) {
-            setError("An Unexpected Error Occurred")
-          }
-        })}>
+      <form className="space-y-3" onSubmit={onSubmit}>
         {/* TITLE */}
         <Controller
           name="title"
@@ -56,11 +60,9 @@ const NewIssuePage = () => {
               value={field.value || ""}></TextField.Root>
           )}
         />
-        
-          <ErrorMessage>
-            {errors.title?.message}
-          </ErrorMessage>
-        
+
+        <ErrorMessage>{errors.title?.message}</ErrorMessage>
+
         {/* Description */}
         <Controller
           name="description"
@@ -69,14 +71,13 @@ const NewIssuePage = () => {
             <SimpleMDE placeholder="Description" {...field} />
           )}
         />
-       
-          <ErrorMessage>
-            {errors.description?.message}
-          </ErrorMessage>
-      
+
+        <ErrorMessage>{errors.description?.message}</ErrorMessage>
 
         {/* Submit */}
-        <Button>Submit New Issue</Button>
+        <Button disabled={isSubmitBool}>
+          Submit New Issue {isSubmitBool && <Spinner />}
+        </Button>
       </form>
     </div>
   )
