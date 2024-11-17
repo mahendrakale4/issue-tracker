@@ -13,7 +13,10 @@ export async function POST(request: NextRequest) {
   const validation = createIssueSchema.safeParse(body)
 
   if (!validation.success) {
-    return NextResponse.json(validation.error.errors, { status: 400 })
+    return NextResponse.json(
+      { message: "Validation failed", errors: validation.error.errors },
+      { status: 400 }
+    )
   }
 
   // When using Client in Js/Ts, you always use the model name in lowercase in the Client queries, even if the model is defined with a capital letter in the schema.
