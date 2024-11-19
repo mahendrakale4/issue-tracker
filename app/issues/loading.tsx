@@ -5,7 +5,7 @@ import "react-loading-skeleton/dist/skeleton.css"
 import IssueAction from "./IssueAction"
 
 const LoadingIssuePage = () => {
-    const issues = [1,2,3,4,5,6,7,8,9,10]
+  const issues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   return (
     <div>
       <IssueAction />
