@@ -1,9 +1,9 @@
-import IssueForm from '../_components/IssueForm'
+import React from 'react'
 
-const NewIssuepage = () => {
+const page = () => {
   return (
-    <IssueForm />
+    <div>page</div>
   )
 }
 
-export default NewIssuepage
+export default page

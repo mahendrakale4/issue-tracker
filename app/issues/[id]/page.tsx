@@ -10,7 +10,7 @@ interface Props {
 
 const IssueDetailPage = async ({ params }: Props) => {
   const { id } = await params
-  const issueId = parseInt(id, 10) // return NaN if not a number
+  const issueId = parseInt(id ,10) // return NaN if not a number
   if (isNaN(issueId)) {
     notFound()
     return
