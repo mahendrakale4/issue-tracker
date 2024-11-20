@@ -39,6 +39,7 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
       console.log(data)
 
       router.push("/issues")
+      router.refresh();
     } catch (error) {
       setisSubmitBool(false)
       setError("An Unexpected Error Occurred")
