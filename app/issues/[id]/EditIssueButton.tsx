@@ -7,7 +7,7 @@ const EditIssueButton = ({issueId}:{issueId: number}) => {
     <div>
       <Button style={{ width: "100%" }}>
         <Pencil2Icon />
-        <Link href={`/issues/${issueId}/edit`}>Edit Issue</Link>
+        <Link href={`/issues/edit/${issueId}`}>Edit Issue</Link>
       </Button>
     </div>
   )

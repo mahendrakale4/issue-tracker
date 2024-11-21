@@ -1,13 +1,13 @@
 import React from "react"
 import { Table } from "@radix-ui/themes"
-import { IssueStatusBadge , Link } from "@/app/components"
-import IssueAction from "./IssueAction"
+import { IssueStatusBadge, Link } from "@/app/components"
+import IssueAction from "../_components/IssueAction"
 import prisma from "@/prisma/client"
 import delay from "delay"
 
 const IssuePage = async () => {
-  const issues = await prisma.issue.findMany();
-  await delay(1000);
+  const issues = await prisma.issue.findMany()
+  await delay(1000)
 
   return (
     <div>
@@ -28,9 +28,7 @@ const IssuePage = async () => {
           {issues.map((issue) => (
             <Table.Row key={issue.id}>
               <Table.Cell>
-                <Link href={`/issues/${issue.id}`}>
-                {issue.title}
-                </Link>
+                <Link href={`/issues/${issue.id}`}>{issue.title}</Link>
                 <div className="block md:hidden">
                   <IssueStatusBadge status={issue.status} />
                 </div>
@@ -48,5 +46,5 @@ const IssuePage = async () => {
     </div>
   )
 }
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic"
 export default IssuePage

@@ -45,7 +45,7 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
       console.log("NEW issue = ")
       console.log(data)
 
-      router.push("/issues")
+      router.push("/issues/list")
       router.refresh()
     } catch (error) {
       setisSubmitBool(false)
