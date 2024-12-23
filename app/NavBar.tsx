@@ -35,7 +35,7 @@ const NavBar = () => {
 const NavLinks = () => {
   const currentPath = usePathname()
   const links = [
-    { label: "Dashboard", href: "/" },
+    { label: "Dashboard", href: "/dashboard" },
     { label: "Issues", href: "/issues/list" },
   ]
 
