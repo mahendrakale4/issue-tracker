@@ -1,21 +1,6 @@
 import prisma from "@/prisma/client"
-import {
-  BoxModelIcon,
-  CircleIcon,
-  DotFilledIcon,
-  TargetIcon,
-} from "@radix-ui/react-icons"
-import {
-  Avatar,
-  Badge,
-  Card,
-  Flex,
-  Heading,
-  Text,
-  Tooltip,
-} from "@radix-ui/themes"
+import { Avatar, Card, Flex, Heading, Text, Tooltip } from "@radix-ui/themes"
 import Link from "next/link"
-import React from "react"
 
 // Define the status colors
 const STATUS_COLORS: Record<string, "red" | "purple" | "green"> = {
@@ -40,7 +25,7 @@ const StatusBadge = ({ status }: { status: string }) => (
 const LatestIssues = async () => {
   const issues = await prisma.issue.findMany({
     orderBy: { createdAt: "desc" },
-    take: 8,
+    take: 10,
     include: {
       assignedToUser: true, // Include assigned user details
     },
