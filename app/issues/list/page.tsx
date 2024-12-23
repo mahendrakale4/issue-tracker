@@ -6,10 +6,12 @@ import { CaretSortIcon } from "@radix-ui/react-icons"
 import { Table } from "@radix-ui/themes"
 import NextLink from "next/link"
 import IssueAction from "../_components/IssueAction"
+import { Pagination } from "../_components/Pagination"
+import { Suspense } from "react"
 
 
 interface Props {
-  searchParams: { status: Status; orderBy: keyof Issue; order: "asc" | "desc" }
+  searchParams: { status: Status; orderBy: keyof Issue; order: "asc" | "desc"; page: string }
 }
 
 const IssuesPage = async ({ searchParams }: Props) => {
@@ -40,13 +42,20 @@ const IssuesPage = async ({ searchParams }: Props) => {
 
   const orderBy = qp.orderBy ? { [qp.orderBy]: currentOrder } : undefined
 
+  const page = parseInt(searchParams.page) || 1;
+  const pageSize = 8;
   const issues = await prisma.issue.findMany({
     where: {
       status: status,
     },
     orderBy,
+    skip: (page - 1) * pageSize,
+    take: pageSize,
   })
 
+  const issueCount = await prisma.issue.count({
+    where: {status: status},
+  })
   return (
     <div>
       <IssueAction />
@@ -90,8 +99,16 @@ const IssuesPage = async ({ searchParams }: Props) => {
               </Table.Cell>
             </Table.Row>
           ))}
-        </Table.Body>
-      </Table.Root>
+
+      <Table.Row>
+          <Table.Cell>
+            <Suspense fallback={null}>
+              <Pagination itemCount={issueCount} pageSize={pageSize} currentPage={page} />
+            </Suspense>
+          </Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table.Root>
     </div>
   )
 }
