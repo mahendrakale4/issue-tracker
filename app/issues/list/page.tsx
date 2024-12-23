@@ -1,13 +1,27 @@
+// 'use client'
 import React from "react"
 import { Table } from "@radix-ui/themes"
 import { IssueStatusBadge, Link } from "@/app/components"
 import IssueAction from "../_components/IssueAction"
 import prisma from "@/prisma/client"
-import delay from "delay"
+import { Status } from "@prisma/client"
+interface Props {
+  searchParams: { status: Status }
+}
+const IssuePage = async ({ searchParams }: any) => {
+  const PromisedsearchParams = await searchParams
+  const statuses = Object.values(Status) // ["OPEN", "IN_PROGRESS", "CLOSED"] : undefined
+console.log(PromisedsearchParams.status)
+  const result = statuses.includes(PromisedsearchParams.status)
+    ? PromisedsearchParams.status
+    : undefined
 
-const IssuePage = async () => {
-  const issues = await prisma.issue.findMany()
-  await delay(1000)
+console.log(result)
+  const issues = await prisma.issue.findMany({
+    where: {
+      status: result,
+    },
+  })
 
   return (
     <div>
@@ -37,7 +51,8 @@ const IssuePage = async () => {
                 <IssueStatusBadge status={issue.status} />
               </Table.Cell>
               <Table.Cell className=" hidden md:table-cell">
-                {issue.createdAt.toDateString()}
+                {/* {issue.createdAt.toDateString()} */}
+                {/* {new Date(issue.createdAt).toDateString()} */}
               </Table.Cell>
             </Table.Row>
           ))}
