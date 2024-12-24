@@ -16,7 +16,7 @@ import { AiFillBug } from "react-icons/ai"
 
 const NavBar = () => {
   return (
-    <nav className=" border-b mb-5 pl-2 px-5 py-3  ">
+    <nav className="sticky top-0 z-[5] border-b px-5 py-3 backdrop-blur-md dark:border-zinc-800">
       <Container>
         <Flex justify={"between"}>
           <Flex align={"center"} gap="3">
