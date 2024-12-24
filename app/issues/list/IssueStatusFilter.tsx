@@ -3,7 +3,7 @@ import { Status } from "@prisma/client"
 import { Select } from "@radix-ui/themes"
 import { useRouter, useSearchParams } from "next/navigation"
 
-const statuses: { label: string; value?: Status }[] = [
+const statuses: { label: string; value?: Status | "All" }[] = [
   { label: "All" ,value: "All" },
   { label: "Open", value: "OPEN" },
   { label: "In Progress", value: "IN_PROGRESS" },

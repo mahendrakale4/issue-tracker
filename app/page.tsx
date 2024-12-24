@@ -9,7 +9,8 @@ const HomePage = () => {
         <Hero />
         <Features />
         <div className="container mx-auto border-t pt-6 text-center dark:border-zinc-600">
-          <p>© {new Date().getFullYear()} Issuefy. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Issue Tracker. All rights reserved.</p>
+          {/* <a href="https://github.com/mahendrakale4/issue-tracker" target="_blank" rel="noopener noreferrer">GitHub</a> */}
         </div>
       </div>
     </>

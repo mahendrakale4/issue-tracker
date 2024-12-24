@@ -8,7 +8,6 @@ export const Hero = () => {
       align="center"
       justify="center"
       className="mx-auto mt-10 max-w-3xl text-center">
-
       <h1 className="mb-6 mt-10 text-3xl font-extrabold min-[450px]:text-4xl md:text-5xl xl:text-6xl">
         Simplify Your Project Management with Issuefy
       </h1>
@@ -18,12 +17,17 @@ export const Hero = () => {
       </Text>
 
       <Flex gap="3" justify="center">
-        <Button size="3">
+        <Button size="3" variant="classic">
           <Link href="/issues/list">Explore All Issues</Link>
         </Button>
 
         <Button size="3" variant="surface">
           <Link href="/dashboard">Dashboard View</Link>
+        </Button>
+        <Button size="3" variant="classic">
+          <Link href="https://github.com/mahendrakale4/issue-tracker">
+            Github
+          </Link>
         </Button>
       </Flex>
     </Flex>
