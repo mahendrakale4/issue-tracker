@@ -25,7 +25,7 @@ export const IssueSummary = ({ open, inProgress, closed }: Props) => {
           } h-fit sm:w-full`}>
           <Flex direction="column" gap="1">
             <Link
-              href={`/issues?status=${container.status}`}
+              href={`/issues/list?status=${container.status}`}
               className="text-sm font-medium">
               {container.label}
             </Link>

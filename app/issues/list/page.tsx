@@ -11,6 +11,7 @@ import NextLink from "next/link"
 import IssueAction from "../_components/IssueAction"
 import { Pagination } from "../_components/Pagination"
 
+import { Metadata } from "next"
 import { Suspense } from "react"
 
 interface Props {
@@ -49,7 +50,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
 
   const orderBy = qp.orderBy ? { [qp.orderBy]: qp.order } : undefined
 
-  const page = parseInt(searchParams.page) || 1
+  const page = parseInt(qp.page) || 1
   const pageSize = 8
   const issues = await prisma.issue.findMany({
     where: {
@@ -147,4 +148,8 @@ const IssuesPage = async ({ searchParams }: Props) => {
 }
 
 export const dynamic = "force-dynamic"
+export const metadata: Metadata = {
+  title: "Issue Tracker - Issue List",
+  description: "View all project issues",
+}
 export default IssuesPage

@@ -3,10 +3,10 @@ import { Avatar, Card, Flex, Heading, Text, Tooltip } from "@radix-ui/themes"
 import Link from "next/link"
 
 // Define the status colors
-const STATUS_COLORS: Record<string, "red" | "purple" | "green"> = {
-  OPEN: "red",
-  IN_PROGRESS: "purple",
-  CLOSED: "green",
+const STATUS_COLORS: Record<string, "#FF829D" | "#9966FF" | "#6FCDCD"> = {
+  OPEN: "#FF829D",
+  IN_PROGRESS: "#9966FF",
+  CLOSED: "#6FCDCD",
 }
 
 const StatusBadge = ({ status }: { status: string }) => (
@@ -25,9 +25,10 @@ const StatusBadge = ({ status }: { status: string }) => (
 const LatestIssues = async () => {
   const issues = await prisma.issue.findMany({
     orderBy: { createdAt: "desc" },
-    take: 10,
+    // distinct: ["id"], 
+    take: 20, 
     include: {
-      assignedToUser: true, // Include assigned user details
+      assignedToUser: true,
     },
   })
 
