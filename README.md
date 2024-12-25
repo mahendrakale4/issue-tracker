@@ -14,7 +14,7 @@ A sleek and simple issue tracker for your project.
 </div>-->
 
 <p align="center">
-  <a href="https://issuefy.vercel.app/">issuefy.vercel.app</a>
+  <a href="https://issuify.vercel.app/">issuefy.vercel.app</a>
 </p>
 
 <p align="center">
