@@ -1,34 +1,129 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Issuefy</h1>
 
-## Getting Started
+<!-- <p align="center">
+A sleek and simple issue tracker for your project.
+</p> -->
 
-First, run the development server:
+<!-- <div align="center">
+  <img src="./public/Issuifly.png" alt="Issuefy Demo" width="100%" />
+</div> -->
+<div align="center">
+  <img src="./public/Issuifly.gif" alt="Issuefy Demo" width="100%" />
+</div>
+
+<p align="center">
+  <a href="https://issuefy.vercel.app/">issuefy.vercel.app</a>
+</p>
+
+<p align="center">
+  A modern, intuitive issue tracking system built with Next.js 15, designed to streamline project management and boost team productivity.
+</p>
+<br>
+
+## ✨ Features
+
+- **Clean, Modern UI**: Minimalist design with smooth animations
+- **Real-time Issue Management**: Efficiently track and manage project issues
+- **Interactive Dashboard**: Visual analytics and issue statistics
+- **Secure Authentication**: Google authentication integration
+- **Responsive Design**: Seamless experience across all devices
+  <br>
+
+## 🛠️ Tech Stack
+
+- **Frontend**:
+
+  - [Next.js 15](https://nextjs.org/) (App Router)
+  - [React](https://reactjs.org/)
+  - [React Query](https://tanstack.com/query/latest) (Data fetching)
+  - [Radix UI](https://www.radix-ui.com/) (UI components)
+  - [React SimpleMDE](https://github.com/RIP21/react-simplemde-editor) (Markdown editor)
+
+- **Backend**:
+
+  - [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction)
+  - [Prisma ORM](https://www.prisma.io/)
+  - [Zod](https://zod.dev/) (Schema validation)
+
+- **Database**:
+
+  - [PostgreSQL](https://www.postgresql.org/) (NeonDB)
+
+- **Authentication**:
+
+  - [NextAuth.js](https://next-auth.js.org/)
+  - Google OAuth
+
+- **Styling**:
+
+  - [Tailwind CSS](https://tailwindcss.com/)
+
+- **Development Tools**:
+  - [React Hook Form](https://react-hook-form.com/) (Form validation)
+  - [React Hot Toast](https://react-hot-toast.com/) (Notifications)
+  - [React Skeleton](https://www.npmjs.com/package/react-loading-skeleton) (Loading states)
+  - [Axios](https://axios-http.com/) (HTTP client)
+    <br>
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/mahendrakale4/issue-tracker.git
+cd issue-tracker
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Set up environment variables**
+   Create a `.env` file in the root directory:
+
+```env
+DATABASE_URL=
+NEXTAUTH_URL=
+NEXTAUTH_SECRET=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
+
+4. **Run the development server**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📱 Core Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Issue Management**
 
-## Learn More
+  - Create and track issues
+  - Assign priorities and status
+  - Filter and search functionality
+  - Real-time updates
 
-To learn more about Next.js, take a look at the following resources:
+- **Dashboard**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  - Issue statistics
+  - Progress tracking
+  - Visual data representation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **User Features**
+  - Google authentication
+  - User profiles
+  - Role-based access
+    <br>
 
-## Deploy on Vercel
+## 🤝 Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Feel free to:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Report bugs
+- Suggest new features
+- Submit pull requests

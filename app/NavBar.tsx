@@ -16,12 +16,12 @@ import { AiFillBug } from "react-icons/ai"
 
 const NavBar = () => {
   return (
-    <nav className="sticky top-0 z-[5] border-b px-5 py-3 backdrop-blur-md dark:border-zinc-800">
+    <nav className="top-0 z-[5] border-b px-5 py-3 backdrop-blur-md ">
       <Container>
         <Flex justify={"between"}>
           <Flex align={"center"} gap="3">
-            <Link href="/">
-              <AiFillBug />
+            <Link href="/" className="flex items-center gap-1  px-3">
+              Issuify <AiFillBug className="inline-block"/>
             </Link>
             <NavLinks />
           </Flex>

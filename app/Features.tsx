@@ -44,9 +44,7 @@ export const Features = () => {
       <Box>
         <Grid columns={{ initial: "1", md: "2" }} gap="5">
           {features.map((feature, index) => (
-            <Card
-              key={index}
-              className="p-6 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <Card key={index} className="p-6 ">
               <div className="flex items-center gap-4">
                 <div className="text-xl">{feature.icon}</div>
 
