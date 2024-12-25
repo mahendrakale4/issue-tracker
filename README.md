@@ -1,15 +1,17 @@
-<h1 align="center">Issuefy</h1>
-
+<h1 align="center">Issuify</h1>
+<p align="center">
+A sleek and simple issue tracker for your project.
+</p>
 <!-- <p align="center">
 A sleek and simple issue tracker for your project.
 </p> -->
 
-<!-- <div align="center">
-  <img src="./public/Issuifly.png" alt="Issuefy Demo" width="100%" />
-</div> -->
 <div align="center">
+  <img src="./public/Issuifly.png" alt="Issuefy Demo" width="100%" />
+</div> 
+<!--  <div align="center">
   <img src="./public/Issuifly.gif" alt="Issuefy Demo" width="100%" />
-</div>
+</div>-->
 
 <p align="center">
   <a href="https://issuefy.vercel.app/">issuefy.vercel.app</a>
