@@ -1,4 +1,4 @@
-<h1 align="center">Issuify</h1>
+<h1 align="center">Issuefy</h1>
 <p align="center">
 A sleek and simple issue tracker for your project.
 </p>
@@ -13,6 +13,9 @@ A sleek and simple issue tracker for your project.
   <img src="./public/Issuifly.gif" alt="Issuefy Demo" width="100%" />
 </div>-->
 
+<p align="center">
+  <a href="https://issuify.mahendra.me/">issuefy.mahendra.me</a>
+</p>
 <p align="center">
   <a href="https://issuify.vercel.app/">issuefy.vercel.app</a>
 </p>
